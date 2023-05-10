@@ -1,10 +1,20 @@
 {
-  "name": " ",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "name": "pb2",
+  "private": true,
+  "homepage": "https://pb2.online/",
+  "author": {
+    "name": "Dan Sazonov",
+    "email": "p-294803@yandex.com",
+    "url": "https://github.com/dan-sazonov"
+  },
+  "license": "Apache License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dan-sazonov/pb2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dan-sazonov/pb2/issues"
+  },
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
