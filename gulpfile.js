@@ -159,7 +159,8 @@ function watchFiles() {
   gulp.watch([path.watch.images], images)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, copyFiles))
+// const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, copyFiles))
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, copyFiles))
 const watch = gulp.parallel(build, watchFiles, serve)
 
 
