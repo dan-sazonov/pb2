@@ -32,7 +32,7 @@ const path = {
   },
   src: {
     html: srcPath + "*.html",
-    css: srcPath + "css/*.scss",
+    css: srcPath + "css/main.scss",
     js: srcPath + "js/*.js",
     images: srcPath + "img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}"
   },
