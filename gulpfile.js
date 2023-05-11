@@ -37,9 +37,9 @@ const path = {
     images: srcPath + "img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}"
   },
   watch: {
-    html:   srcPath + "**/*.html",
-    js:     srcPath + "js/**/*.js",
-    css:    srcPath + "css/**/*.scss",
+    html: srcPath + "**/*.html",
+    js: srcPath + "js/**/*.js",
+    css: srcPath + "css/**/*.scss",
     images: srcPath + "img/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}"
   },
   clean: "./" + distPath
@@ -71,10 +71,10 @@ function html() {
 function css() {
   return src(path.src.css, {base: srcPath + "css/"})
     .pipe(plumber({
-      errorHandler : function(err) {
+      errorHandler: function (err) {
         notify.onError({
-          title:    "SCSS Error",
-          message:  "Error: <%= error.message %>"
+          title: "SCSS Error",
+          message: "Error: <%= error.message %>"
         })(err);
         this.emit('end');
       }
@@ -101,10 +101,10 @@ function css() {
 function js() {
   return src(path.src.js, {base: srcPath + "js/"})
     .pipe(plumber({
-      errorHandler : function(err) {
+      errorHandler: function (err) {
         notify.onError({
-          title:    "JS Error",
-          message:  "Error: <%= error.message %>"
+          title: "JS Error",
+          message: "Error: <%= error.message %>"
         })(err);
         this.emit('end');
       }
@@ -147,6 +147,11 @@ function clean() {
   return del(path.clean)
 }
 
+function copyFiles() {
+  return src([`${srcPath}browserconfig.xml`, `${srcPath}.htaccess`, `${srcPath}favicon.ico`, `${srcPath}humans.txt`, `${srcPath}robots.txt`, `${srcPath}LICENSE`, `${srcPath}site.webmanifest`,])
+    .pipe(dest(path.build.html))
+}
+
 function watchFiles() {
   gulp.watch([path.watch.html], html)
   gulp.watch([path.watch.css], css)
@@ -154,7 +159,7 @@ function watchFiles() {
   gulp.watch([path.watch.images], images)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages))
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, copyFiles))
 const watch = gulp.parallel(build, watchFiles, serve)
 
 
@@ -163,6 +168,7 @@ exports.css = css
 exports.js = js
 exports.images = images
 exports.webpImages = webpImages
+exports.copyFiles = copyFiles
 exports.clean = clean
 exports.build = build
 exports.watch = watch
