@@ -6,3 +6,12 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
+header {
+  background: #ff6000;
+  .logo {
+    max-width: 2.5rem;
+  }
+  a {
+    font-weight: 500!important;
+  }
+}
