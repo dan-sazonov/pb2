@@ -8,15 +8,17 @@
 
 header {
   background: #ff6000;
+
   .logo {
     max-width: 2.5rem;
   }
+
   a {
-    font-weight: 500!important;
+    font-weight: 500 !important;
   }
 }
 
 .preview_photo {
-   background: url("/img/team.jpg") center center no-repeat;
-   background-size: cover;
+  background: url("/img/team.jpg") center center no-repeat;
+  background-size: cover;
 }
