@@ -41,19 +41,25 @@ header {
 
 .events {
   #carouselExampleCaptions {
-    max-width: 70%!important;
+    max-width: 70% !important;
   }
 }
 
-.news {
+.news, .partners {
   .btn-outline-primary:hover {
     color: #fff;
     background-color: $baseColor;
-    border-color: $baseColor ;
+    border-color: $baseColor;
   }
 
   .btn-outline-primary {
     color: $baseColor;
     border-color: $baseColor;
+  }
+}
+
+.partners {
+  .btn-outline-primary {
+    width: 100%;
   }
 }
