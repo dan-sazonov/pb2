@@ -38,3 +38,16 @@ header {
     font-size: 7rem;
   }
 }
+
+.news {
+  .btn-outline-primary:hover {
+    color: #fff;
+    background-color: $baseColor;
+    border-color: $baseColor ;
+  }
+
+  .btn-outline-primary {
+    color: $baseColor;
+    border-color: $baseColor;
+  }
+}
