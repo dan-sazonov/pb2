@@ -43,6 +43,13 @@ header {
   #carouselExampleCaptions {
     max-width: 70% !important;
   }
+  .carousel-inner {
+    p {
+      font-weight: bold;
+      font-size: 3rem;
+      color: $baseColor;
+    }
+  }
 }
 
 .news, .partners {
